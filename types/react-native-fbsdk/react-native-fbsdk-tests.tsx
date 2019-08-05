@@ -19,7 +19,7 @@ export class Login extends React.Component {
         return (
             <View>
                 <LoginButton
-                    publishPermissions={["publish_actions"]}
+                    permissions={["publish_actions"]}
                     onLoginFinished={
                         (error, result) => {
                             if (error) {
@@ -45,7 +45,7 @@ export class Login extends React.Component {
 }
 
 // Attempt a login using the Facebook login dialog asking for default permissions.
-LoginManager.logInWithReadPermissions(['public_profile']).then(
+LoginManager.logInWithPermissions(['public_profile']).then(
     (result) => {
         if (result.isCancelled) {
             alert('Login cancelled');
